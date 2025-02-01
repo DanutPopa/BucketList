@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C529E202D4E9E8E00E22E03 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C529E1F2D4E9E8E00E22E03 /* EditView.swift */; };
 		0C90D4A72CD0F40A0035A80F /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C90D4A62CD0F40A0035A80F /* BucketListApp.swift */; };
 		0C90D4A92CD0F40A0035A80F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C90D4A82CD0F40A0035A80F /* ContentView.swift */; };
 		0C90D4AB2CD0F40D0035A80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C90D4AA2CD0F40D0035A80F /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C529E1F2D4E9E8E00E22E03 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		0C90D4A32CD0F40A0035A80F /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C90D4A62CD0F40A0035A80F /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		0C90D4A82CD0F40A0035A80F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C529E1E2D4E9E7F00E22E03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C529E1F2D4E9E8E00E22E03 /* EditView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0C90D49A2CD0F40A0035A80F = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +65,7 @@
 			children = (
 				0C90D4A62CD0F40A0035A80F /* BucketListApp.swift */,
 				0C90D4A82CD0F40A0035A80F /* ContentView.swift */,
+				0C529E1E2D4E9E7F00E22E03 /* Views */,
 				0CA60D972D4D184500EFB154 /* Model */,
 				0C90D4AA2CD0F40D0035A80F /* Assets.xcassets */,
 				0C90D4AC2CD0F40D0035A80F /* Preview Content */,
@@ -150,6 +161,7 @@
 			files = (
 				0C90D4A92CD0F40A0035A80F /* ContentView.swift in Sources */,
 				0CA60D992D4D185300EFB154 /* Location.swift in Sources */,
+				0C529E202D4E9E8E00E22E03 /* EditView.swift in Sources */,
 				0C90D4A72CD0F40A0035A80F /* BucketListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
