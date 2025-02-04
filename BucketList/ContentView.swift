@@ -9,7 +9,21 @@ import MapKit
 import SwiftUI
 
 struct ContentView: View {
+    enum MapMode {
+        case standard, hybrid
+        
+        var mapStyle: MapStyle {
+            switch self {
+            case .standard:
+                    .standard
+            case .hybrid:
+                    .hybrid
+            }
+        }
+    }
+    
     @State private var viewModel = ViewModel()
+    @State private var mapMode = MapMode.standard
     
     let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -19,30 +33,43 @@ struct ContentView: View {
     var body: some View {
         if viewModel.isUnlocked {
             MapReader { proxy in
-                Map(initialPosition: startPosition) {
-                    ForEach(viewModel.locations) { location in
-                        Annotation(location.name, coordinate: location.coordinate) {
-                            Image(systemName: "star.circle")
-                                .resizable()
-                                .foregroundStyle(.red)
-                                .frame(width: 44, height: 44)
-                                .background(.white)
-                                .clipShape(.circle)
-                                .onLongPressGesture {
-                                    viewModel.selectedPlace = location
-                                }
+                VStack {
+                    Map(initialPosition: startPosition) {
+                        ForEach(viewModel.locations) { location in
+                            Annotation(location.name, coordinate: location.coordinate) {
+                                Image(systemName: "star.circle")
+                                    .resizable()
+                                    .foregroundStyle(.red)
+                                    .frame(width: 44, height: 44)
+                                    .background(.white)
+                                    .clipShape(.circle)
+                                    .onLongPressGesture {
+                                        viewModel.selectedPlace = location
+                                    }
+                            }
                         }
                     }
-                }
-                .onTapGesture { position in
-                    if let coordinate = proxy.convert(position, from: .local) {
-                        viewModel.addLocation(at: coordinate)
+                    .mapStyle(mapMode.mapStyle)
+                    .onTapGesture { position in
+                        if let coordinate = proxy.convert(position, from: .local) {
+                            viewModel.addLocation(at: coordinate)
+                        }
                     }
-                }
-                .sheet(item: $viewModel.selectedPlace) { place in
-                    EditView(location: place) { newLocation in
-                        viewModel.update(location: newLocation)
+                    .sheet(item: $viewModel.selectedPlace) { place in
+                        EditView(location: place) { newLocation in
+                            viewModel.update(location: newLocation)
+                        }
                     }
+                    
+                    Picker("Map Mode", selection: $mapMode) {
+                        Text("Standard")
+                            .tag(MapMode.standard)
+                        
+                        Text("Hybrid")
+                            .tag(MapMode.hybrid)
+                    }
+                    .pickerStyle(.segmented)
+                    .padding()
                 }
             }
         } else {
