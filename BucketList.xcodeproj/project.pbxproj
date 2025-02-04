@@ -51,6 +51,7 @@
 		0C529E1E2D4E9E7F00E22E03 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C90D4A82CD0F40A0035A80F /* ContentView.swift */,
 				0C529E1F2D4E9E8E00E22E03 /* EditView.swift */,
 			);
 			path = Views;
@@ -76,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				0C90D4A62CD0F40A0035A80F /* BucketListApp.swift */,
-				0C90D4A82CD0F40A0035A80F /* ContentView.swift */,
 				0C32A0872D51454F00C6A256 /* ViewModels */,
 				0C529E1E2D4E9E7F00E22E03 /* Views */,
 				0CA60D972D4D184500EFB154 /* Model */,
