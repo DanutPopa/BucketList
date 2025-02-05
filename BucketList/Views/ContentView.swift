@@ -69,7 +69,7 @@ struct ContentView: View {
                             .tag(MapMode.hybrid)
                     }
                     .pickerStyle(.segmented)
-                    .padding()
+                    .padding(.horizontal)
                 }
             }
         } else {
