@@ -49,7 +49,7 @@ extension EditView {
             }
         }
         
-        func getLocation() -> Location {
+        func getNewLocation() -> Location {
             var newLocation = location
             newLocation.id = UUID()
             newLocation.name = name

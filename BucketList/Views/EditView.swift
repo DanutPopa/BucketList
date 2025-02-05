@@ -43,7 +43,7 @@ struct EditView: View {
             .navigationTitle("Place details")
             .toolbar {
                 Button("Save") {
-                    let newLocation = viewModel.getLocation()
+                    let newLocation = viewModel.getNewLocation()
                     onSave(newLocation)
                     dismiss()
                 }
